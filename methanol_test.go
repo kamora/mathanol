@@ -87,7 +87,26 @@ func TestRem64(t *testing.T) {
 func TestSum(t *testing.T) {
 	nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 	sum := Sum[int](nums...)
+
 	if sum != 55 {
 		t.Errorf("not equal: got %d, want 55", sum)
+	}
+}
+
+func TestMin(t *testing.T) {
+	nums := []int{5, 6, 7, 8, 9, 10, -5, -4, -3, -2, -1}
+	val := Min[int](nums...)
+
+	if val != -5 {
+		t.Errorf("not equal: got %d, want -1", val)
+	}
+}
+
+func TestMax(t *testing.T) {
+	nums := []int{5, 6, 7, 8, 9, 10, -5, -4, -3, -2, -1}
+	val := Max[int](nums...)
+
+	if val != 10 {
+		t.Errorf("not equal: got %d, want 10", val)
 	}
 }

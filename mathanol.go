@@ -31,8 +31,34 @@ func Clamp[T Number](v T, low T, high T) T {
 
 func Sum[T Number](nums ...T) T {
 	var sum T = 0
+
 	for _, num := range nums {
 		sum += num
 	}
+
 	return sum
+}
+
+func Min[T Number](nums ...T) T {
+	var val T = 0
+
+	for _, num := range nums {
+		if num < val {
+			val = num
+		}
+	}
+
+	return val
+}
+
+func Max[T Number](nums ...T) T {
+	var val T = 0
+
+	for _, num := range nums {
+		if num > val {
+			val = num
+		}
+	}
+
+	return val
 }
