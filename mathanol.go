@@ -28,3 +28,11 @@ func Clamp[T Number](v T, low T, high T) T {
 
 	return v
 }
+
+func Sum[T Number](nums ...T) T {
+	var sum T = 0
+	for _, num := range nums {
+		sum += num
+	}
+	return sum
+}
