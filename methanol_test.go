@@ -83,3 +83,11 @@ func TestRem64(t *testing.T) {
 		}
 	}
 }
+
+func TestSum(t *testing.T) {
+	nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	sum := Sum[int](nums...)
+	if sum != 55 {
+		t.Errorf("not equal: got %d, want 55", sum)
+	}
+}
