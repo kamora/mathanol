@@ -94,19 +94,42 @@ func TestSum(t *testing.T) {
 }
 
 func TestMin(t *testing.T) {
-	nums := []int{5, 6, 7, 8, 9, 10, -5, -4, -3, -2, -1}
-	val := Min[int](nums...)
+	nums := []int{5, 6, 7, 8, 9, 10}
+	var val int
 
-	if val != -5 {
+	val = Min[int](nums...)
+	if val != 5 {
 		t.Errorf("not equal: got %d, want -1", val)
 	}
+
+	val = Min[int]()
+	if val != 0 {
+		t.Errorf("not equal: got %d, want 0", val)
+	}
+
+	val = Min[int](100)
+	if val != 100 {
+		t.Errorf("not equal: got %d, want 100", val)
+	}
+
 }
 
 func TestMax(t *testing.T) {
-	nums := []int{5, 6, 7, 8, 9, 10, -5, -4, -3, -2, -1}
-	val := Max[int](nums...)
+	nums := []int{5, 6, 7, 8, 9, 10}
+	var val int
 
+	val = Max[int](nums...)
 	if val != 10 {
 		t.Errorf("not equal: got %d, want 10", val)
+	}
+
+	val = Max[int]()
+	if val != 0 {
+		t.Errorf("not equal: got %d, want 0", val)
+	}
+
+	val = Max[int](100)
+	if val != 100 {
+		t.Errorf("not equal: got %d, want 100", val)
 	}
 }

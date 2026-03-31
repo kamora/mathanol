@@ -42,6 +42,10 @@ func Sum[T Number](nums ...T) T {
 func Min[T Number](nums ...T) T {
 	var val T = 0
 
+	if len(nums) > 0 {
+		val = nums[0]
+	}
+
 	for _, num := range nums {
 		if num < val {
 			val = num
@@ -53,6 +57,10 @@ func Min[T Number](nums ...T) T {
 
 func Max[T Number](nums ...T) T {
 	var val T = 0
+
+	if len(nums) > 0 {
+		val = nums[0]
+	}
 
 	for _, num := range nums {
 		if num > val {
